@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils import timezone
+
 
 class Tag(models.Model):
     name = models.CharField(max_length=50)
@@ -9,7 +11,7 @@ class Tag(models.Model):
 class Task(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
-    deadline = models.DateTimeField(null=True, blank=True)
+    deadline = models.DateTimeField(default=timezone.now)
     is_done = models.BooleanField(default=False)
     tags = models.ManyToManyField(Tag)
 
