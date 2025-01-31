@@ -30,8 +30,8 @@
                         <div class="card-body">
                             <h5 class="card-title" style="color: black;">
                                 {{ task.content }}
-                                <span class="badge {% if task.content == "Create project Todo list" %}badge-success{% else %}badge-danger{% endif %} ml-2">
-                                    {% if task.content == "Create project Todo list" %}Done{% else %}Not Done{% endif %}
+                                <span class="badge {% if task.is_done %}badge-success{% else %}badge-danger{% endif %} ml-2">
+                                    {% if task.is_done %}Done{% else %}Not Done{% endif %}
                                 </span>
                                 <a href="{% url 'todo:toggle_task_status' task.pk %}" class="btn {% if task.is_done %}btn-secondary{% else %}btn-success{% endif %} btn-sm float-right">
                                     {% if task.is_done %}Undo{% else %}Complete{% endif %}
