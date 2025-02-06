@@ -87,3 +87,8 @@ local_settings.py
 
 .env
 db.sqlite3
+
+DjangoProject/__pycache__/__init__.cpython-313.pyc
+DjangoProject/__pycache__/settings.cpython-313.pyc
+.idea/vcs.xml
+.idea/dataSources.xml
