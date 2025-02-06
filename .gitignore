@@ -1,4 +1,6 @@
 /venv/
 /db.sqlite3
 __pycache__
-".idea/" 
+.idea/
+DjangoProject/__pycache__/
+Todo_list/__pycache__/
