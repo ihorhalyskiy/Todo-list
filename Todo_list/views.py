@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Task, Tag
 from .forms import TaskForm, TagForm
-from django.utils import timezone
+
 
 def home(request):
     tasks = Task.objects.all().order_by("is_done", "-created_at")
@@ -27,7 +27,7 @@ def update_task(request, pk):
             form.save()
             return redirect("todo:home")
         else:
-            print("Form errors:", form.errors)  # Виведення помилок форми для налагодження
+            print("Form errors:", form.errors)
     else:
         form = TaskForm(instance=task)
     return render(request, "update_task.html", {"form": form})
